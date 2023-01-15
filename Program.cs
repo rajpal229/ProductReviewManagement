@@ -32,11 +32,7 @@
                 new Product { ProductId = 1, UserId = 5, Rating = 1, Review = "Very Bad", IsLike = false },
                 new Product { ProductId = 2, UserId = 1, Rating = 3, Review = "Very Good", IsLike = true }
             };
-            Console.WriteLine("ProductId | UserId | Rating | Review");
-            foreach ( var a in products)
-            {
-                Console.WriteLine("   " + a.ProductId + "      |   " + a.UserId + "    |   " + a.Rating + "    | " + a.Review);
-            }
+            ProductReviewManagement.Top3Records(products);
         }
     }
 }
