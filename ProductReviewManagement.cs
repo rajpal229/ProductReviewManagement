@@ -40,6 +40,7 @@ namespace ProductReviewManagement
             foreach (var list in productdata)
             {
                 Console.WriteLine("    " + list.ProductId + "     | " + list.Review);
+
             }
         }
     }
