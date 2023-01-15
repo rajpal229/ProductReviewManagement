@@ -11,8 +11,8 @@ namespace ProductReviewManagement
         public static void Top3Records(List<Product> productReviewList)
         {
             var productdata = (from reviewList in productReviewList
-                               where reviewList.Rating == 5
-                               select reviewList).Take(3);
+                               where (reviewList.Rating > 3 && (reviewList.ProductId == 1 || reviewList.ProductId == 4 || reviewList.ProductId == 9))
+                               select reviewList);
             Console.WriteLine("ProductId | UserId | Rating | Review    | IsLike");
             foreach (var list in productdata)
             {
