@@ -32,5 +32,15 @@ namespace ProductReviewManagement
                 Console.WriteLine($"    {a.ProductId}     |   {a.Count}");
             }
         }
+        public static void RetrieveOnly(List<Product> productReviewList)
+        {
+            var productdata = (from reviewList in productReviewList
+                               select reviewList);
+            Console.WriteLine("ProductId | Review");
+            foreach (var list in productdata)
+            {
+                Console.WriteLine("    " + list.ProductId + "     | " + list.Review);
+            }
+        }
     }
 }
