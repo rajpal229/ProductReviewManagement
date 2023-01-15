@@ -32,8 +32,22 @@
                 new Product { ProductId = 1, UserId = 5, Rating = 1, Review = "Very Bad", IsLike = false },
                 new Product { ProductId = 2, UserId = 1, Rating = 3, Review = "Very Good", IsLike = true }
             };
-            ProductReviewManagement.Top3Records(products);
+            Console.WriteLine("Enter\n1.For Top 3 Records\n2.For Count of ProductId");
+            int op = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                switch (op)
+                {
+                    case 1:
+                        ProductReviewManagement.Top3Records(products);
 
+                        break;
+                    case 2:
+                        ProductReviewManagement.Count(products);
+                        break;
+                }
+                break;
+            }
         }
     }
 }

@@ -19,5 +19,18 @@ namespace ProductReviewManagement
                 Console.WriteLine("    " + list.ProductId + "     |   " + list.UserId + "    |   " + list.Rating + "    | " + list.Review + " | " + list.IsLike);
             }
         }
+        public static void Count(List<Product> productReviewList)
+        {
+            var groupByProductId = (from reviewList in productReviewList
+                               group reviewList by reviewList.ProductId into newGroup
+                               orderby newGroup.Key
+                               select new { ProductId = newGroup.Key, Count = newGroup.Count()}
+                               );
+            Console.WriteLine("ProductId | Count");
+            foreach ( var a in groupByProductId ) 
+            {
+                Console.WriteLine($"    {a.ProductId}     |   {a.Count}");
+            }
+        }
     }
 }
